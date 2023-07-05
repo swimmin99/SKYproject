@@ -1,0 +1,258 @@
+@charset 'utf-8';
+@import url("https://fonts.googleapis.com/css2?family=Orbitron&display=swap");
+
+/* 3단계 - CSS 초기화 */
+* {
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+}
+ul, ol {
+	list-style: none;
+}
+a {
+	text-decoration: none;
+}
+
+/* 3단계 - 프로필 박스 만들기 */
+body {
+  background-color: #ebfaff;
+} 
+
+section {
+	width: 90%;
+	height: 90vh;
+	padding: 30px;
+	background-color: #fdfcfc;
+	margin: 50px auto;
+	box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.1);
+	border-radius: 10px;
+}
+
+/* 4단계 - 상단 버튼 만들기 */
+section nav.menu {
+	width: 100%;
+}
+section nav.menu::after {
+	content: "";
+	display: block;
+	clear: both;
+}
+section nav.menu a {
+	font-size: 20px;
+	color: #666;
+}
+section nav.menu a:nth-of-type(1) {
+	float: left;
+}
+section nav.menu a:nth-of-type(2) {
+	float: right;
+}
+
+/* 프로필 영역 */
+section article.profile {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+}
+
+
+section article.profile h1 {
+	font-weight: bold;
+	font-size: 45px;
+	font-family: "arial";
+	line-height: 1;
+	color: #555;
+	margin-bottom: 5px;
+}
+section article.profile h2 {
+	font-weight: normal;
+	font-size: 30px;
+	font-family: "arial";
+	color: #bbb;
+	margin-bottom: 30px;
+}
+section a.btnView {
+	display: block;
+	width: 40vw;
+	height:4vh;
+	margin: 0px auto 20px;
+	background-color:#444;
+	border-radius: 16px;
+	font-weight: bold;
+	font-size: 30px;
+	font-family: "arial";
+	color: #fff;
+	text-align: center;
+}
+
+/* 6단계 - 연락처 목록 만들기 */
+section ul.description {
+	margin-bottom: 25px; 
+	margin: left 2px;0px;
+}
+section ul.description li {
+	width: 100%;
+	padding: 10px 0px;
+	border-bottom: 1px solid #eee;
+}
+section ul.description li:last-child {
+	border-bottom: none;
+}
+section ul.description li i {
+	width: 20%;
+	text-align: center;
+	color: #555;
+	font-size: 15px;
+	text-shadow: 2px 2px 2px #ddd;
+}
+section ul.description li span {
+	font-weight: normal;
+	font-size: 22px;
+	font-family: "ariel";
+	color: #555;
+	letter-spacing: 1px;
+}
+
+/* 7단계 - 멤버별 링크 만들기 */
+section nav.others {
+	width: 100%;
+	text-align: center;
+}
+section nav.others a {
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	margin: 0px 10px;
+	opacity: 0.4;	/* 8단계 버튼 활성화하기 */
+	filter: saturate(0.7); /* 8단계 버튼 활성화하기 */
+}
+section nav.others a.on {
+	opacity: 1; /* 8단계 버튼 활성화하기 */
+	filter: saturate(1); /* 8단계 버튼 활성화하기 */
+}
+section nav.others a:nth-of-type(1) {
+	background-color: #35e0f7;
+	box-shadow: 5px 5px 10px rgba(74, 255, 255, 0.7); 
+}
+section nav.others a:nth-of-type(2) {
+	background-color: #55f5cd;
+	box-shadow: 5px 5px 10px rgba(85, 245, 178, 0.7); 
+}
+section nav.others a:nth-of-type(3) {
+	background-color: #ff80df;
+	box-shadow: 5px 5px 10px rgba(255, 128, 223, 0.7); 
+}
+section nav.others a:nth-of-type(4) {
+	background-color: #a794fd;
+	box-shadow: 5px 5px 10px rgba(167, 148, 253, 0.7); 
+}
+
+/* 9단계 - 멤버별 프로필 완성하기 */
+/* member1 */
+body.member1 {
+	background-color: #ebfaff;
+}
+body.member1 section article.profile img {
+	box-shadow: 5px 15px 30px rgba(173, 216, 230, 0.8);
+}
+body.member1 section a.btnView {
+	background: linear-gradient(45deg, #4affff, #35e0f7);
+	box-shadow: 5px 10px 20px rgba(0, 255, 255, 0.493);
+}
+/* member2 */
+body.member2 {
+	background-color: #edffeb;
+}
+body.member2 section article.profile img {
+	box-shadow: 5px 15px 20px #bdccb783; 
+}
+body.member2 section a.btnView {
+	background: linear-gradient(45deg, #a0ff9d, #55f5b2);   
+    box-shadow: 5px 10px 20px rgba(33, 250, 105, 0.3); 
+}
+/* member3 */
+body.member3 {
+	background-color: #fff3fd;
+}
+body.member3 section article.profile img {
+	box-shadow: 5px 15px 20px  rgba(252, 99, 214, 0.2); 
+}
+body.member3 section a.btnView {
+	background: linear-gradient(45deg, #ef74ff, #ff11c4);   
+	box-shadow: 5px 10px 20px rgba(255, 17, 196, 0.357); 
+}
+/* member4 */
+body.member4 {
+	background-color: #f5f0ff;
+}
+body.member4 section article.profile img {
+	box-shadow: 5px 15px 20px rgba(183, 82, 250, 0.2);
+}
+body.member4 section a.btnView {
+	background: linear-gradient(45deg, #8e74ff, #a011ff);   
+	box-shadow: 5px 10px 20px rgba(160, 17, 255, 0.4);
+}
+section article.profile .circle {
+   width: 30vh;
+    height: 30vh;
+    border-radius: 50%;
+    margin-bottom: 20px;   
+    position: relative;
+	overflow:hidden;
+	/*여기서 튀어나가는 원을 자름 마스크와 비슷*/
+    border: 7px solid #464343;
+    border-radius: 100%;
+    background: linear-gradient(#0f153b, #52f2fd);
+    transform: translate3d(0, 0, 0);
+  }
+
+  /*파도별 공통속성*/
+.wave-one,
+.wave-two,
+.wave-three,
+.wave-four {
+    position: absolute;
+	width: 200%;
+	height: 200%;
+}
+/*파도*/
+.wave-one {
+	top: -125%;
+	left: -50%;
+	border-radius: 45%;
+	background: rgba(3,169,244,0.8);
+	animation: move 3s infinite linear;
+}
+
+
+/*파도 배경*/
+.wave-three {
+	top: -140%;
+	left: -50%;
+	border-radius: 45%;
+	background: #211668;
+	border: 6px solid rgba(131,119,152,0.7);
+	animation: move 7s infinite linear;
+}
+/*파도 경계*/
+
+
+.wave-four {
+	top: -120%;
+	border-radius: 46%;
+	background: linear-gradient(rgba(252,251,232,0.1) 10%, transparent);
+	animation: move 7s infinite linear;
+}
+
+
+  @keyframes move {
+	100% {
+	  transform: rotate(360deg);
+	}
+  }
+  

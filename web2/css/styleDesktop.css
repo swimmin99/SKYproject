@@ -1,0 +1,337 @@
+@charset "utf-8";
+/*https://gurtn.tistory.com/164/ for star effects.
+  /* 배경 */
+  .backSky {
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(to right, #111, #0e0f19);  
+    overflow: hidden;
+  }
+  
+  /* 별을 감싼 부모 */
+  .sky {
+    width: 100vw;
+    height: 100vw;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: moveStar 240s linear infinite;
+  }
+  
+  /* 별 */
+  .sky .star {
+    fill: #fff;
+    stroke: none;
+    stroke-width: 0;
+  }
+  
+  /* 별 이동효과 */
+  @keyframes moveStar {
+    from {
+      transform: translate(-50%, -50%) rotate(0)
+    }
+  
+    to {
+      transform: translate(-50%, -50%) rotate(360deg)
+    }
+  }
+  /*==================================================================*/
+/* 3단계 */
+* {
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+}
+ul, ol, li {
+	list-style: none;
+}
+a {
+	text-decoration: none;
+	outline: 0;
+}
+figure {
+	width: 100%;
+	height: 100vh;
+	min-height: 600px;
+	overflow: hidden;
+	position: relative;
+	background: linear-gradient(25deg, rgb(0, 0, 0), rgb(37, 36, 95));
+}
+figure h1 {
+	position: absolute;
+	top: 7vh;
+	left: 4vw;
+	font-size: 0;
+}
+figure h1 strong {
+	font-size: 36px;
+	font-family: "arial";
+	color: #fff;
+	line-height: 1.4;
+	letter-spacing: 1px;
+}
+figure h1 span {
+	font-size: 50px;
+	font-family: "arial";
+	color: #fff;
+	opacity: 0.8;
+	line-height: 1;
+	letter-spacing: 1px;
+}
+figure .menu {
+	position: absolute;
+	top: 8vh;
+	right: 4vw;
+	font-size: 24px;
+	color: #fff;
+}
+figure > p {
+	position: absolute;
+	bottom: 7vh;
+	left: 50%;
+	transform: translateX(-50%);
+	font: 12px/1 "arial";
+	color: #fff;
+	letter-spacing: 2px;
+	opacity: 0.8;
+}
+
+figure section { /*음악 플레이어 패널 프레임 그룹*/
+    width: 20vw;
+	height: 65vh;
+	position: absolute;
+	left: 50%;
+	top: 140%;
+	margin-top: -25vh;
+	margin-left: -10vw;	
+	transition: 1s; /* 11단계 */
+
+}
+figure section article { /*개별 음악 플레이어 패널*/
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+}
+figure section article .inner { /*음악 플레이어 패널 콘텐츠 그룹*/
+	width: 100%;
+	height: 100%;
+	padding: 5vh 2.5vw 8vh;
+
+	box-sizing: border-box;
+	display: flex;
+	justify-content: center;
+	align-content: space-between; /*자식 콘텐츠의 안쪽 세로 여백을 균등 배치*/
+	flex-wrap: wrap;
+	transform: scale(0.5); /*축소시켜서 비솰성화*/
+	transition: opacity 1s, transform 1s; /* 7단계 */
+	background-color: aqua;
+}
+figure section article.on .inner {
+	opacity: 0.9; /* 7단계 */
+	transform: scale(1.1); /* 7단계 */
+}
+
+/* 8단계 */
+figure section article .inner .pic {
+	width: 100%;
+	height: 60%;
+	margin: 0px auto;
+	background-repeat: no-repeat;
+    background-size:contain;
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+}
+figure section article .inner .pic::before,
+figure section article .inner .pic::after {
+	content: "";
+	display: block;
+	width: inherit;
+	height: inherit;
+	border-radius: inherit;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+
+}
+figure section article .inner .pic::before {
+	transform: translateY(10%);
+}
+
+
+/* 9단계 */
+figure section article .inner .txt {
+	text-align: center;
+	position: relative;
+	z-index: 3;
+    background-color: #fff;
+
+	padding: 5vh 2.5vw 8vh;
+	box-sizing: border-box;
+	border-radius: 10px;
+	box-shadow: 10px 10px 20px rgba(255, 255, 255, 0.1);
+    opacity: 0.75;    
+}
+figure section article .inner .txt h2 {
+	font-size: 20px;
+	font-family: "arial";
+	color: #222;
+	margin-bottom: 2vh;
+}
+figure section article .inner .txt p {
+	font-size: 12px;
+	margin-bottom: 3vh;
+	color: #777;
+}
+figure section article .inner .txt ul {
+	display: flex;
+	justify-content: space-around;
+}
+figure section article .inner .txt ul li {
+	cursor: pointer;
+	opacity: 0.6;
+	transition: 0.5s;
+}
+
+
+/* 10단계 */
+@keyframes ani {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+@keyframes ani2 {
+	0% {
+		transform: translateY(10%) rotate(0deg);
+	}
+	100% {
+		transform: translateY(10%) rotate(360deg);
+	}
+}
+
+figure section article .inner .pic.on::after {
+	animation: ani 4s linear infinite;
+}
+figure section article .inner .pic.on::before {
+	animation: ani2 4s linear infinite;
+}
+
+/* 11단계 */
+figure .btnPrev {
+	width: 120px;
+	height: 60px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-20vw, -50%);
+	display: flex;
+	align-items: center;
+	text-align: left;
+	cursor: pointer;
+}
+figure .btnPrev span {
+	font: 60px/1 "arial";
+	color: #fff;
+	opacity: 1;
+	transform: translateX(30%);
+	transition: 0.5s;
+}
+figure .btnPrev::before {
+	content: "";
+	display: block;
+	width: 100%;
+	height: 1px;
+	background: #fff;
+	position: absolute;
+	top: 50%;
+	left: 0px;
+	transform-origin: left center;
+	transform: rotate(-180deg);
+	transition: 0.5s;
+}
+figure .btnPrev::after {
+	content: "";
+	display: block;
+	width: 100%;
+	height: 1px;
+	background: #fff;
+	position: absolute;
+	bottom: 50%;
+	left: 0px;
+	transform-origin: left center;
+	transform: rotate(180deg);
+	transition: 0.5s;
+}
+figure .btnPrev:hover span {
+	opacity: 0;
+	transform: translateX(100%);
+}
+figure .btnPrev:hover::before {
+	transform: rotate(-30deg);
+}
+figure .btnPrev:hover::after {
+	transform: rotate(30deg);
+}
+figure .btnNext {
+	width: 120px;
+	height: 60px;
+	position: absolute;
+	top: 50%;
+	right: 50%;
+	transform: translate(20vw, -50%);
+	display: flex;
+	align-items: center;
+	text-align: right;
+	cursor: pointer;
+}
+figure .btnNext span {
+	font: 60px/1 "arial";
+	color: #fff;
+	opacity: 1;
+	transform: translateX(-30%);
+	transition: 0.5s;
+}
+figure .btnNext::before {
+	content: "";
+	display: block;
+	width: 100%;
+	height: 1px;
+	background: #fff;
+	position: absolute;
+	top: 50%;
+	left: 0px;
+	transform-origin: right center;
+	transform: rotate(180deg);
+	transition: 0.5s;
+}
+figure .btnNext::after {
+	content: "";
+	display: block;
+	width: 100%;
+	height: 1px;
+	background: #fff;
+	position: absolute;
+	bottom: 50%;
+	left: 0px;
+	transform-origin: right center;
+	transform: rotate(-180deg);
+	transition: 0.5s;
+}
+figure .btnNext:hover span {
+	opacity: 0;
+	transform: translateX(-100%);
+}
+figure .btnNext:hover::before {
+	transform: rotate(30deg);
+}
+figure .btnNext:hover::after {
+	transform: rotate(-30deg);
+}

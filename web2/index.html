@@ -6,9 +6,9 @@
     <title>Music Player</title>
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <script src="https://kit.fontawesome.com/c47106c6a7.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="css/style.css">
     <script defer src="js/ie.js"></script>
     <script defer src="js/main.js"></script>
+    <link rel="stylesheet" href="css/styleMobile.css">
 
 	
 </head>
@@ -62,9 +62,8 @@
                     <div class="txt">
                         <h2>월 입력</h2>
                         <p>태어난 월을 입력하시오.</p>
-							<div class="Month">
+							<div class="inputMonth">
 								<form>
-									<label for="month">월:</label>
 									<select id="month" name="month">
 										<option value="">월 입력</option>
 										<option value="01">1월</option>
@@ -80,100 +79,65 @@
 										<option value="11">11월</option>
 										<option value="12">12일</option>
 									</select>
-									<input type="submit" value="Submit">
 								</form>
 								
 							</div>
-                        <ul>       
-                            <li class="pause">
-                                <i class="fas fa-pause"></i>
-                            </li>   
-                            <li class="play">
-                                <i class="fas fa-play"></i>
-                            </li>
-                            <li class="load">
-                                <i class="fas fa-redo-alt"></i>
-                            </li>
-                        </ul>
                     </div>
                 </div>
             </article>
 
             <article>
                 <div class="inner">
-                    <div class="pic">
-                    </div>
-
+                    <div class="pic"></div>
                     <div class="txt">
-                        <h2>Calm</h2>
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing.</p>
-                        <ul>       
-                            <li class="pause">
-                                <i class="fas fa-pause"></i>
-                            </li>   
-                            <li class="play">
-                                <i class="fas fa-play"></i>
-                            </li>
-                            <li class="load">
-                                <i class="fas fa-redo-alt"></i>
-                            </li>
-                        </ul>
+                        <h2>일 입력</h2>
+                        <p>태어난 일을 입력하시오.</p>
+                        <div class="inputDay">
+                            <form>
+                                <select id="day" name="day">
+                                    <option value="">일 입력</option>
+                                    <option value="01">1일</option>
+                                    <option value="02">2일</option>
+                                    <option value="03">3일</option>
+                                    <!-- Add options up to 31 -->
+                                    <option value="30">30일</option>
+                                    <option value="31">31일</option>
+                                </select>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </article>
-			<article>
+
+            <article>
                 <div class="inner">
-                    <div class="pic">
-                    </div>
-
+                    <div class="pic"></div>
                     <div class="txt">
-                        <h2>Calm</h2>
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing.</p>
-                        <ul>       
-                            <li class="pause">
-                                <i class="fas fa-pause"></i>
-                            </li>   
-                            <li class="play">
-                                <i class="fas fa-play"></i>
-                            </li>
-                            <li class="load">
-                                <i class="fas fa-redo-alt"></i>
-                            </li>
-                        </ul>
+                        <h2>성별 입력</h2>
+                        <p>성별을 입력하시오.</p>
+                        <div class="inputSex">
+                            <form>
+                                <select id="sex" name="sex">
+                                    <option value="">성별 입력</option>
+                                    <option value="male">남성</option>
+                                    <option value="female">여성</option>
+                                    <option value="other">기타</option>
+                                </select>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </article>
-			<article>
-                <div class="inner">
-                    <div class="pic">
-                    </div>
-
-                    <div class="txt">
-                        <h2>Calm</h2>
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing.</p>
-                        <ul>       
-                            <li class="pause">
-                                <i class="fas fa-pause"></i>
-                            </li>   
-                            <li class="play">
-                                <i class="fas fa-play"></i>
-                            </li>
-                            <li class="load">
-                                <i class="fas fa-redo-alt"></i>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </article>
-
+            
 
         </section>    
 
         <div class="btnPrev">
             <span>이전</span>
         </div>
-        <div class="btnNext">
+        <div class="btnNext" id="btnNext">
             <span>다음</span>
+            
         </div>
 
         <p>2023 Universe Test</p>
